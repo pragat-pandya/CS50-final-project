@@ -14,7 +14,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 app = Flask(__name__)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///portal.db")
+db = SQL("postgres://qfdvcmjwbfagpq:304c64d2e5d88b6a6c7cd7b1290dacfd350bb4aab01eff368fd9f44f4c268dcc@ec2-107-21-214-26.compute-1.amazonaws.com:5432/dusat416icrnj")
 
 
 # The default route AKA home-page
@@ -37,7 +37,6 @@ def blogs():
 
     # Returns the blog.html template injecting the data-objects titles and intros
     return render_template("blog.html", bloglist=bloglist)
-
 
 
 @app.route("/blogs/<parm>")
@@ -145,6 +144,3 @@ def contact():
         return redirect(url_for('get_index'))
 
 
-app.route("/tutorials")
-def tutorial():
-    return render_template("tuts.html")
