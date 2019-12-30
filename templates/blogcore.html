@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+
+<section class=" container bg-light text-center">
+    <div class="my-5" id="blog-name">
+        <h1 class="display-2">
+            {{ blogdata[0]['blog_title'] }}
+        </h1>
+    </div>
+
+    <div class="mb-5 bg-light" id="blog-intro">
+        <p class="lead">
+            {{blogdata[0]['brief_intro']}}
+        </p>
+    </div>
+
+    <div class="bg-light mb-5" id="blog-body">
+            {{ blogdata[0]['blog_body']|safe }}
+    </div>
+
+</section>
+
+{% endblock %}

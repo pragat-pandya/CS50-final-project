@@ -1,0 +1,145 @@
+{% extends "layout.html" %}
+
+{% block script %}
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+
+	title:{
+		text:"MY TECHNICAL SKILLS"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		interlacedColor: "rgba(1,77,101,.2)",
+		gridColor: "rgba(1,77,101,.1)",
+		title: "Self Evaluation Of My Skills Out Of 16!"
+	},
+	data: [{
+		type: "bar",
+		name: "skills",
+		axisYType: "secondary",
+		color: "#292b2c",
+		dataPoints: [
+			{ y: 10, label: "C" },
+			{ y: 15, label: "Python3" },
+			{ y: 12, label: "HTML" },
+			{ y: 9, label: "CSS" },
+			{ y: 8, label: "Java Script" },
+			{ y: 10, label: "SQL" },
+			{ y: 15, label: "Bootstrap" },
+			{ y: 12, label: "Operating Systems" },
+			{ y: 9, label: "Computer Networks" },
+			{ y: 7, label: "Data Structures & Algorithms" }
+		]
+	}]
+});
+chart.render();
+
+}
+
+{% endblock %}
+
+
+{% block main %}
+<section id="introduction">
+    <div class="jumbotron jumbotron-fluid bg-dark">
+        <div class="container">
+            <h1 class="display-4 text-center text-white mb-5 jumbo-title" id="">PRAGAT PANDYA</h1>
+            <p class="lead text-center text-white helper-text" id="intro-string" >
+                I'm an undergraduate Information Technology Engineer based in India with an inevitable desire to learn! Welcome to my portal. Feel free to check my blogs and tutorials!
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light my-5" id="about">
+	<div class="container-fluid bg-light text-dark text-center">
+		<p class="display-3 jumbo-title" id="">Below are some fun facts about me:</p>
+		<p>
+			<ul class="helper-text" id="fact-list">
+				<li>
+					I grew up in a small town of state Gujarat named Palitana. Currently doing my engineering from Shree
+					Shantilal Shah Govt., Engineering College, Bhavnagar.
+				</li>
+				<li>
+					I'm a Black-Belt in Karate(Shitoryu Style). I used to play school Taekwondo (Silver Medal, Bhavnagar District.).
+				</li>
+				<li>
+					I enjoyed playing piano while growing up. For me, It's the best stress-buster till today.
+				</li>
+				<li>
+					I love Cleveland Indians. (not because I'm an Indian)
+				</li>
+				<li>
+					I love pizza! (A BIG weakness!)
+				</li>
+				<li>
+					I have a Labrador Retriever named Aura
+				</li>
+				<li>
+					I'm an avid mountaineer. (In Love with Himalayas)
+				</li>
+				<li>
+					I enjoy being behinde the lens. (Intermediary photographer)
+				</li>
+			</ul>
+		</p>
+	</div>
+</section>
+
+<section class="my-8 bg-light pt-5" id="skills">
+    <div class="container-fluid">
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    </div>
+</section>
+
+<section class="mt-5 bg-light" id="contact">
+	<div class="container bg-light">
+		<div class="text-center display-4 jumbo-title" id="">
+			Get In Touch :)
+		</div>
+		<form action="{{url_for('contact')}}" class="form-text jumbo-title" method="POST" id="">
+
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name" class="form-control">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email" placeholder="example123@xyz.com" class="form-control" required>
+					<div class="valid-feedback">Valid</div>
+            		<div class="invalid-feedback">Please fill out this field</div>
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label for="sub">Subject:</label>
+					<input type="text" id="sub" placeholder="Subject of the message" name="subject" class="form-control">
+				</div>
+				<div class="form-group col-md-12">
+					<lable for="msg">Message:</lable>
+					<textarea name="message" id="msg" cols="3" class="form-control" required>Write your message here!</textarea>
+					<div class="valid-feedback">Valid</div>
+            		<div class="invalid-feedback">Please fill out this field</div>
+				</div>
+			</div>
+
+			<div class="row">
+    			<div class="col text-center">
+      				<button class="btn btn-success">Get In Touch</button>
+    			</div>
+  			</div>
+
+		</form>
+
+	</div>
+
+</section>
+
+{% endblock %}

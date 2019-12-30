@@ -1,0 +1,55 @@
+/* fonts for navbar links*/
+
+nav {
+    font-family: 'Mansalva', cursive;
+}
+
+
+/* h1 tag inside the jumbotron*/
+
+.jumbo-title {
+    font-family: 'Mansalva', cursive;
+}
+
+
+/*Text below the h1 in jumbotron*/
+
+.helper-text {
+    font-family: 'Courgette', cursive;
+}
+
+#blog-name{
+    font-family: 'Baloo Bhai', cursive;
+}
+
+#blog-intro{
+    font-family: 'Kanit', sans-serif;
+}
+
+#blog-body{
+    font-family: 'Kanit', sans-serif;
+}
+
+#fact-list{
+    font-size: 1.6rem;
+}
+
+#intro-string{
+    font-size: 1.6rem;
+}
+
+#skills{
+    font-family: 'Mansalva', cursive;
+}
+
+.form-text{
+    font-size:1.6rem;
+}
+
+.lead{
+    font-size:1.6rem;
+}
+
+.blog-para{
+    font-size: 1.4rem;
+}

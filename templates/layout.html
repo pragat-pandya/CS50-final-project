@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- documentation at http://getbootstrap.com/docs/4.1/, alternative themes at https://bootswatch.com/ -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="{{url_for('static', filename='nerd.png')}}" rel="icon">
+    <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/1dd04b140c.js" crossorigin="anonymous"></script>
+    <!------For page specific head scripts------->
+    <script class="script">
+        {% block script %} {% endblock %}
+    </script>
+
+    <!------ Google Fonts ---------------->
+    <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Kanit&display=swap" rel="stylesheet">
+
+    <title>Pragat Pandya </title>
+
+</head>
+
+<body>
+
+    <!---NAVBAR WITH RESPONSIVE TOGGLE-->
+    <nav class="navbar navbar-expand-md navbar-light bg-dark">
+
+        <!--Div container for navbar-->
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand">
+                <img class="img-fluid rounded-circle" src="{{url_for('static', filename='logo.png')}}" alt="Vector Image of a Boy">
+            </a>
+
+            <!--Collapcible toggler button for small and medium screen sizes-->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#NavbarNav">
+							<span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--Navlinks-->
+            <div class="collapse navbar-collapse" id="NavbarNav">
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link font-weight-bold text-white active" href="#about">About</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link font-weight-bold text-white" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link font-weight-bold text-white" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown mx-2">
+                        <a href="#" class="nav-link dropdown-toggle font-weight-bold text-white" data-toggle="dropdown">More</a>
+                        <div class="dropdown-menu bg-dark">
+                            <a href="{{url_for('blogs')}}" class="dropdown-item font-weight-bold text-white">Blogs</a>
+                            <a href="{{url_for('tutorial')}}" class="dropdown-item font-weight-bold text-white" disabled>Tutorials</a>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!--PLUG-IN CONTENT HERE-->
+    <main class="main">
+        {% block main %}{% endblock %}
+    </main>
+
+    <!--RESPONSIVE FOOTER-->
+    <footer class="page-footer pt-4 my-5 bg-dark">
+        <div class="container">
+            <ul class="list-unstyled list-inline text-center">
+                <li class="list-inline-item">
+                    <a href="https://www.facebook.com/pragat.pandya.10" target="_blank" class="btn-floating btn-fb mx-3">
+                        <span style="color:#f7f7f7"><i class="fab fa-facebook-f fa-2x"></i></span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://twitter.com/pandya_pragat" target="_blank" class="btn-floating btn-tw mx-3">
+                      <span style="color:#f7f7f7"><i class="fab fa-twitter fa-2x"> </i></span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.linkedin.com/in/pragat-pandya/" target="_blank" class="btn-floating btn-li mx-3">
+                         <span style="color:#f7f7f7"><i class="fab fa-linkedin-in fa-2x"> </i></span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.instagram.com/voltile_._adhesiv3/" target="_blank" class="btn-floating btn-ig mx-3">
+                        <span style="color:#f7f7f7"><i class="fab fa-instagram fa-2x"></i></span>
+                    </a>
+                </li>
+            </ul>
+            <p class="text-center text-white helper-text">
+                Made with <span style="color:red"><i class="fas fa-heart fa-lg"></i></span> and <span style="color:#563d7c "><i class="fab fa-bootstrap fa-lg"></i></span>.
+            </p>
+        </div>
+
+    </footer>
+</body>
+
+
+</html>
